@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mir Tuhin Billah · Food Engineering and Machine Learning</title>
+<meta name="description" content="Mir Tuhin Billah is a Ph.D. candidate in Grain Science at Kansas State University building machine-learning models that predict and reverse-design the quality of extruded foods.">
+<meta name="author" content="Mir Tuhin Billah">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mir Tuhin Billah · Food Engineering and Machine Learning">
+<meta property="og:description" content="Machine learning that predicts and reverse-designs the quality of extruded foods. Ph.D. candidate, Kansas State University.">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/InterDisplay-SemiBold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/img/tuhin-1024.webp" as="image" type="image/webp" imagesrcset="assets/img/tuhin-640.webp 640w, assets/img/tuhin-1024.webp 1024w, assets/img/tuhin-1600.webp 1600w" imagesizes="(max-width: 833px) 100vw, 50vw">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Mir Tuhin Billah","jobTitle":"Ph.D. Candidate in Grain Science","affiliation":[{"@type":"CollegeOrUniversity","name":"Kansas State University"},{"@type":"CollegeOrUniversity","name":"Hajee Mohammad Danesh Science and Technology University"}],"email":"mailto:mtbillah01@ksu.edu","sameAs":["https://scholar.google.com/citations?hl=en&user=_oGqy9IAAAAJ","https://orcid.org/0009-0003-9874-1420","https://www.linkedin.com/in/mtbillah/","https://hstu.ac.bd/teacher/mirtuhin"],"knowsAbout":["Food extrusion","Machine learning","Plant-based meat analogues","Food process engineering","Drying","Sustainable food packaging"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a class="nav__mark" href="#top" translate="no">Mir Tuhin Billah</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 6h14M2 12h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav__links" id="nav-links" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
+      <a class="nav__cta" href="mailto:mtbillah01@ksu.edu">Email</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="tile tile--light hero" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1 id="hero-title" class="reveal" translate="no">Mir Tuhin Billah</h1>
+      <p class="lead reveal">I build machine-learning models that predict, and reverse-design, the quality of extruded foods.</p>
+      <p class="hero__aff reveal">Ph.D. candidate in Grain Science at <strong>Kansas State University</strong>, advised by Dr. Sajid Alavi. Assistant Professor of Food Engineering and Technology at <strong>HSTU, Bangladesh</strong> (on study leave).</p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="mailto:mtbillah01@ksu.edu">Email me</a>
+        <a class="btn btn--ghost" href="https://scholar.google.com/citations?hl=en&amp;user=_oGqy9IAAAAJ" rel="noopener">Google Scholar<svg class="ext" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <p class="hero__links reveal">
+        <a href="https://orcid.org/0009-0003-9874-1420" rel="noopener">ORCID</a>
+        <a href="https://www.linkedin.com/in/mtbillah/" rel="noopener">LinkedIn</a>
+        <a href="https://hstu.ac.bd/teacher/mirtuhin" rel="noopener">HSTU profile</a>
+      </p>
+    </div>
+    <figure class="hero__photo">
+      <picture>
+        <source type="image/webp" srcset="assets/img/tuhin-640.webp 640w, assets/img/tuhin-1024.webp 1024w, assets/img/tuhin-1600.webp 1600w" sizes="(max-width: 833px) 100vw, 50vw">
+        <img src="assets/img/tuhin-1024.jpg" srcset="assets/img/tuhin-640.jpg 640w, assets/img/tuhin-1024.jpg 1024w, assets/img/tuhin-1600.jpg 1600w" sizes="(max-width: 833px) 100vw, 50vw" width="1024" height="1024" alt="Portrait of Mir Tuhin Billah in a dark suit and blue tie against a gray backdrop" fetchpriority="high">
+      </picture>
+    </figure>
+  </div>
+</section>
+
+<!-- Research: the live extruder -->
+<section class="tile tile--dark" id="research" aria-labelledby="research-title">
+  <div class="wrap">
+    <div class="research__head">
+      <h2 id="research-title" class="reveal">Closing the loop in extrusion</h2>
+      <p class="statement reveal">An extruder logs its speed, moisture, temperatures and pressure every second. I align those signals in time with what leaves the die, then train models that run in both directions.</p>
+    </div>
+
+    <div class="loop reveal" data-mode="predict">
+      <div class="seg" role="group" aria-label="Model direction">
+        <button type="button" class="seg__btn" data-set="predict" aria-pressed="true">Predict quality</button>
+        <button type="button" class="seg__btn" data-set="reverse" aria-pressed="false">Reverse-design</button>
+      </div>
+
+      <div class="loop__stage">
+        <div class="loop__col loop__col--process">
+          <h3>Process</h3>
+          <ul>
+            <li>Screw speed</li>
+            <li>Feed moisture</li>
+            <li>Barrel temperature</li>
+            <li>Specific mechanical energy</li>
+            <li>Die pressure and torque</li>
+          </ul>
+        </div>
+
+        <svg class="extruder" viewBox="0 0 640 200" role="img" aria-labelledby="ext-title ext-desc">
+          <title id="ext-title">Twin-screw extruder</title>
+          <desc id="ext-desc">A simplified drawing of an extruder: a feed hopper on the left, a barrel with rotating screws, and a die on the right where expanded product leaves.</desc>
+          <defs>
+            <clipPath id="barrel-clip"><rect x="92" y="82" width="440" height="60"/></clipPath>
+          </defs>
+          <!-- hopper -->
+          <path class="ext-body" d="M96 20h88l-22 52h-44z"/>
+          <rect class="ext-body" x="118" y="70" width="44" height="14"/>
+          <!-- motor -->
+          <rect class="ext-body" x="20" y="92" width="64" height="40" rx="5"/>
+          <rect class="ext-steel" x="84" y="106" width="12" height="12"/>
+          <!-- barrel -->
+          <rect class="ext-barrel" x="92" y="78" width="444" height="68" rx="5"/>
+          <g clip-path="url(#barrel-clip)">
+            <rect class="ext-shaft" x="92" y="108" width="440" height="8"/>
+            <g class="screw">
+              <path class="ext-flight" d="M60 84l14 56h10L70 84zM92 84l14 56h10l-14-56zM124 84l14 56h10l-14-56zM156 84l14 56h10l-14-56zM188 84l14 56h10l-14-56zM220 84l14 56h10l-14-56zM252 84l14 56h10l-14-56zM284 84l14 56h10l-14-56zM316 84l14 56h10l-14-56zM348 84l14 56h10l-14-56zM380 84l14 56h10l-14-56zM412 84l14 56h10l-14-56zM444 84l14 56h10l-14-56zM476 84l14 56h10l-14-56zM508 84l14 56h10l-14-56zM540 84l14 56h10l-14-56zM572 84l14 56h10l-14-56z"/>
+            </g>
+          </g>
+          <!-- heating zones -->
+          <rect class="ext-zone" x="196" y="70" width="60" height="6" rx="3"/>
+          <rect class="ext-zone" x="292" y="70" width="60" height="6" rx="3"/>
+          <rect class="ext-zone" x="388" y="70" width="60" height="6" rx="3"/>
+          <!-- die -->
+          <path class="ext-body" d="M536 78h30l18 22v24l-18 22h-30z"/>
+          <!-- product leaving the die -->
+          <g class="puffs">
+            <ellipse class="ext-puff" cx="602" cy="112" rx="10" ry="8"/>
+            <ellipse class="ext-puff" cx="626" cy="104" rx="9" ry="7"/>
+            <ellipse class="ext-puff" cx="622" cy="124" rx="8" ry="7"/>
+          </g>
+          <!-- signal arrow under the machine -->
+          <g class="flow">
+            <path class="ext-arrow" d="M120 176H520"/>
+            <path class="ext-arrowhead ext-arrowhead--fwd" d="M512 169l10 7-10 7"/>
+            <path class="ext-arrowhead ext-arrowhead--rev" d="M128 169l-10 7 10 7"/>
+          </g>
+        </svg>
+
+        <div class="loop__col loop__col--product">
+          <h3>Product</h3>
+          <ul>
+            <li>Expansion ratio</li>
+            <li>Bulk density</li>
+            <li>Texture and hardness</li>
+            <li>Fibrosity in meat analogues</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="loop__caption" aria-live="polite">
+        <span class="when-predict"><strong>Forward model.</strong> From what the machine is doing right now, estimate the product before it is measured.</span>
+        <span class="when-reverse"><strong>Inverse design.</strong> Start from the product you want and recover the process settings that will make it.</span>
+      </p>
+    </div>
+
+    <p class="research__refs reveal">This work is under revision at <em>Comprehensive Reviews in Food Science and Food Safety</em>, and will be presented at the Cereals &amp; Grains Association 2026 conference in Bloomington, Minnesota.</p>
+  </div>
+</section>
+
+<!-- Research threads -->
+<section class="tile tile--parchment" id="themes" aria-labelledby="themes-title">
+  <div class="wrap">
+    <div class="themes__head">
+      <h2 id="themes-title" class="reveal">Where the work goes</h2>
+      <p class="reveal">Food process engineering joined with data science, aimed at extrusion and drying that are smarter, more predictable and more sustainable.</p>
+    </div>
+    <div class="threads">
+      <article class="thread reveal">
+        <h3>Machine learning for extrusion</h3>
+        <p>Process optimization, predictive and inverse design of product quality from time-aligned process data, and model-controlled predictive systems.</p>
+      </article>
+      <article class="thread reveal">
+        <h3>Plant-based meat analogues</h3>
+        <p>High-moisture extrusion, raw-material functionality, fiber and 3D printing, and computer-vision estimates of fibrosity.</p>
+      </article>
+      <article class="thread reveal">
+        <h3>High-protein, sustainable cereals and snacks</h3>
+        <p>Whole corn meal, intermediate wheatgrass, and air-classified faba bean and mung bean protein concentrates.</p>
+      </article>
+      <article class="thread reveal">
+        <h3>Process engineering and modeling</h3>
+        <p>Design and optimization of fluidized bed, double drum and heat pump dryers using RSM, ANN and CFD.</p>
+      </article>
+      <article class="thread reveal">
+        <h3>Sustainable food packaging</h3>
+        <p>Biodegradable and starch-based films made from agricultural by-products such as banana pseudo-stem and fruit peels.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Publications -->
+<section class="tile tile--light" id="publications" aria-labelledby="pubs-title">
+  <div class="wrap">
+   <div class="split">
+    <div class="split__side">
+      <h2 id="pubs-title" class="reveal">Publications</h2>
+      <p class="reveal">7 peer-reviewed journal articles and 4 manuscripts under review. An asterisk marks the corresponding author. The full record is on <a href="https://scholar.google.com/citations?hl=en&amp;user=_oGqy9IAAAAJ" rel="noopener">Google&nbsp;Scholar</a>.</p>
+
+    <div class="chips reveal" role="group" aria-label="Filter publications by topic">
+      <button type="button" class="chip" data-topic="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-topic="extrusion" aria-pressed="false">Extrusion and ML</button>
+      <button type="button" class="chip" data-topic="drying" aria-pressed="false">Drying and modeling</button>
+      <button type="button" class="chip" data-topic="packaging" aria-pressed="false">Packaging films</button>
+      <button type="button" class="chip" data-topic="quality" aria-pressed="false">Food quality and safety</button>
+    </div>
+    <p class="pubs__count" id="pubs-count" aria-live="polite">Showing all 11</p>
+    </div>
+    <div class="pubs__body">
+
+    <h3 class="pubs__group pubs__group--first">Under review</h3>
+    <ol class="pubs" reversed>
+      <li class="pub" data-topic="extrusion">
+        <span class="pub__year">2026</span>
+        <div><p class="pub__title">Artificial intelligence and machine learning in food extrusion: from product-quality prediction to control-ready modeling</p>
+        <p class="pub__meta"><b>Billah, M. T.</b>, Li, Y., and Alavi, S. <em>Comprehensive Reviews in Food Science and Food Safety</em>, under revision.</p></div>
+      </li>
+      <li class="pub" data-topic="extrusion">
+        <span class="pub__year">2026</span>
+        <div><p class="pub__title">Whole corn meal in extruded breakfast cereals: impact of extruder screw speed and formulation on product characteristics and process variability</p>
+        <p class="pub__meta"><b>Billah, M. T.</b>, Bakoalijaona, N., Li, Y., and Alavi, S. <em>Journal of Food Science</em>, under review.</p></div>
+      </li>
+      <li class="pub" data-topic="quality">
+        <span class="pub__year">2026</span>
+        <div><p class="pub__title">An evidence-informed HACCP framework for instant fried-noodle manufacturing</p>
+        <p class="pub__meta"><b>Billah, M. T.</b>, Hossain, A., Alavi, S., Suzauddula, M., Hossain, S. S., and Ahmed, M. <em>Food Control</em>, under revision.</p></div>
+      </li>
+      <li class="pub" data-topic="drying">
+        <span class="pub__year">2026</span>
+        <div><p class="pub__title">Evaluating the effect of blanching on drying efficiency and quality of onions dried by a fluidized bed dryer</p>
+        <p class="pub__meta">Hossain, S. S., Hossain, A., Sarker, M. S. H.*, and <b>Billah, M. T.*</b> <em>Food Science &amp; Nutrition</em>, under revision.</p></div>
+      </li>
+    </ol>
+
+    <h3 class="pubs__group">Published</h3>
+    <ol class="pubs">
+      <li class="pub" data-topic="packaging">
+        <span class="pub__year">2026</span>
+        <div><p class="pub__title">Development and comparative characterization of potato-starch films containing raw papaya and orange peel powders</p>
+        <p class="pub__meta">Hena, S. R., Sachcha, I. H., <b>Billah, M. T.*</b>, and Mahomud, M. S. <em>Carbohydrate Polymer Technologies and Applications</em>, 101225.</p></div>
+      </li>
+      <li class="pub" data-topic="quality">
+        <span class="pub__year">2026</span>
+        <div><p class="pub__title">Edible agricultural weeds for sustainable nutrition and hunger reduction</p>
+        <p class="pub__meta">Suzauddula, M., and <b>Billah, M. T.</b> <em>Food and Humanity</em>, 101417.</p></div>
+      </li>
+      <li class="pub" data-topic="drying">
+        <span class="pub__year">2025</span>
+        <div><p class="pub__title">Process optimization of fluidized bed drying for water spinach: evaluating the effect of blanching through RSM and ANN models</p>
+        <p class="pub__meta"><b>Billah, M. T.*</b>, Zannat, N. E., Hossain, M. A., Sachcha, I. H., Yasmin, S., and Sarker, M. S. H.* <em>Food Science &amp; Nutrition</em>, 13(4), e70114.</p></div>
+      </li>
+      <li class="pub" data-topic="drying">
+        <span class="pub__year">2024</span>
+        <div><p class="pub__title">Integrated design and optimization of a conceptual double drum dryer for drying of wheat flour slurry: experimental validation and computational analysis</p>
+        <p class="pub__meta"><b>Billah, M. T.</b>, Hossain, M. A., Zannat, N. E., Roy, J., and Sarker, M. S. H. <em>Journal of Food Process Engineering</em>, 47(8), e14701.</p></div>
+      </li>
+      <li class="pub" data-topic="packaging">
+        <span class="pub__year">2024</span>
+        <div><p class="pub__title">Development of eco-friendly biofilms by utilizing microcrystalline cellulose extract from banana pseudo-stem</p>
+        <p class="pub__meta">Sachcha, I. H., Paddar, K., Minar, M. M., Rahman, L., Hasan, S. K., Aktaruzzaman, M., <b>Billah, M. T.*</b>, and Yasmin, S.* <em>Heliyon</em>.</p></div>
+      </li>
+      <li class="pub" data-topic="quality">
+        <span class="pub__year">2024</span>
+        <div><p class="pub__title">Optimizing pectin yield from Burmese grape (<i>Baccaurea ramiflora</i>) peels using Box–Behnken design and quality evaluation</p>
+        <p class="pub__meta">Hossain, M. A., Rana, M. M., <b>Billah, M. T.</b>, Oliver, M. M. H., and Haque, M. A. <em>International Journal of Food Science</em>, 2024(1), 8064657.</p></div>
+      </li>
+      <li class="pub" data-topic="quality">
+        <span class="pub__year">2023</span>
+        <div><p class="pub__title">Jackfruit seed as a natural source for protein and mineral enrichment of yogurt</p>
+        <p class="pub__meta">Hossain, M. A., Dewan, M. F., <b>Billah, M. T.</b>, Ahiduzzaman, M., Haque, M. M., and Haque, M. A. <em>Journal of Food Processing and Preservation</em>, 2023.</p></div>
+      </li>
+    </ol>
+    <p class="pubs__empty" hidden>Nothing in this topic yet. <button type="button" class="linkbtn" data-topic="all">Show all publications</button></p>
+    </div>
+   </div>
+  </div>
+</section>
+
+<!-- Talks -->
+<section class="tile tile--dark" id="talks" aria-labelledby="talks-title">
+  <div class="wrap">
+    <h2 id="talks-title" class="reveal">Talks and presentations</h2>
+    <p class="talks__intro reveal">13 conference presentations, 10 as lead author, at IFT, the Cereals &amp; Grains Association and Kansas State University.</p>
+
+    <h3 class="talks__group" id="talks-upcoming-title">Coming up</h3>
+    <ul class="talks talks--upcoming" aria-labelledby="talks-upcoming-title">
+      <li class="talk" data-date="2026-11-05">
+        <p class="talk__date">5&nbsp;Nov 2026</p>
+        <div><p class="talk__title">Machine-learning-based prediction and reverse design of product quality using time-aligned process data</p>
+        <p class="talk__meta">Oral presentation · GFGSO Symposium, Kansas State University, Manhattan, KS</p></div>
+      </li>
+      <li class="talk" data-date="2026-11-12">
+        <p class="talk__date">11–12&nbsp;Nov 2026</p>
+        <div><p class="talk__title">Closing the loop in extrusion: machine-learning-based prediction and reverse design of product quality using time-aligned process data</p>
+        <p class="talk__meta">Oral presentation, plus three posters on meat-analogue fibrosity, faba and mung bean protein concentrates, and intermediate wheatgrass · Cereals &amp; Grains Association 2026 Chemistry, Quality, and Technology Conference, Bloomington, MN</p></div>
+      </li>
+      <li class="talk" data-date="2026-12-03">
+        <p class="talk__date">3&nbsp;Dec 2026</p>
+        <div><p class="talk__title">AI for food science and quality</p>
+        <p class="talk__meta">Invited webinar · Cereals &amp; Grains Association</p></div>
+      </li>
+    </ul>
+
+    <h3 class="talks__group" id="talks-past-title">Earlier</h3>
+    <ul class="talks talks--past" aria-labelledby="talks-past-title">
+      <li class="talk" data-date="2026-10-28">
+        <p class="talk__date">28&nbsp;Oct 2026</p>
+        <div><p class="talk__title">From Terra Bytes to Tasty Bites: using machine learning to map food structure and quality</p>
+        <p class="talk__meta">3 Minute Thesis Competition, Kansas State University</p></div>
+      </li>
+      <li class="talk" data-date="2026-10-23">
+        <p class="talk__date">23&nbsp;Oct 2026</p>
+        <div><p class="talk__title">Novel machine-learning-based approach for extruded food product development and process control</p>
+        <p class="talk__meta">GSGSO Symposium, Kansas State University</p></div>
+      </li>
+      <li class="talk" data-date="2026-07-15">
+        <p class="talk__date">12–15&nbsp;Jul 2026</p>
+        <div><p class="talk__title">Whole corn meal in extruded breakfast cereals: product characteristics, process variability and mechanistic links in time-series data</p>
+        <p class="talk__meta">Poster, plus two co-authored posters on plant-based meat · IFT Annual Meeting and Expo, Chicago, IL</p></div>
+      </li>
+      <li class="talk" data-date="2026-04-21">
+        <p class="talk__date">21&nbsp;Apr 2026</p>
+        <div><p class="talk__title">Integrating machine learning for predictive and inverse modeling of extruded snacks</p>
+        <p class="talk__meta">K-State Graduate Research, Arts, and Discovery (K-GRAD) Forum</p></div>
+      </li>
+      <li class="talk" data-date="2026-02-11">
+        <p class="talk__date">11&nbsp;Feb 2026</p>
+        <div><p class="talk__title">Lag against the machine: using data science in healthy snack processing</p>
+        <p class="talk__meta">3 Minute Thesis Competition, Kansas State University</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="tile tile--parchment" id="experience" aria-labelledby="exp-title">
+  <div class="wrap">
+    <h2 id="exp-title" class="reveal">From the factory floor to the lab</h2>
+    <p class="exp__intro reveal">Five years making infant formula, noodles, coffee and confectionery safe and consistent at Nestlé and Perfetti Van Melle, before turning that process data into research.</p>
+
+    <div class="exp">
+      <div class="exp__row reveal">
+        <h3>Education</h3>
+        <dl class="roles">
+          <div><dt>Ph.D., Grain Science</dt><dd>Kansas State University · 2025–2029 (expected)</dd><dd>GPA 4.0/4.0, minor in Computer Science. Graduate Excellence Fellowship.</dd></div>
+          <div><dt>M.S., Food Engineering and Technology</dt><dd>HSTU, Bangladesh · 2020–2021</dd><dd>CGPA 4.00/4.00, first in class. Thesis: a lab-scale double drum dryer.</dd></div>
+          <div><dt>B.Sc., Food and Process Engineering</dt><dd>HSTU, Bangladesh · 2013–2016</dd><dd>First of 38; Prime Minister Gold Medal.</dd></div>
+        </dl>
+      </div>
+      <div class="exp__row reveal">
+        <h3>Academic</h3>
+        <dl class="roles">
+          <div><dt>Graduate Research and Teaching Assistant</dt><dd>Grain and Food Science, Kansas State University · 2025–now</dd></div>
+          <div><dt>Assistant Professor</dt><dd>Food Engineering and Technology, HSTU · 2024–now (on study leave)</dd></div>
+          <div><dt>Lecturer</dt><dd>Food Engineering and Technology, HSTU · 2022–2024</dd></div>
+          <div><dt>Co-Principal Investigator, two funded projects</dt><dd>Commercializing the HSTU fruit and vegetable dryer (BANBEIS, 2024–now) and a food-grade nanocellulose biofilm (HSTU, 2023–2024)</dd></div>
+        </dl>
+      </div>
+      <div class="exp__row reveal">
+        <h3>Industry</h3>
+        <dl class="roles">
+          <div><dt>Food Safety Lead, in charge</dt><dd>Nestlé Bangladesh · 2022</dd><dd>Infant formula, milk powder, coffee and beverages; FSSC 22000.</dd></div>
+          <div><dt>Senior Officer, HACCP Coordinator</dt><dd>Nestlé Bangladesh · 2019–2022</dd><dd>Heat-treatment validation, hygienic engineering, QA lead for COVID-19 crisis management.</dd></div>
+          <div><dt>Senior Executive, New Product Development</dt><dd>Perfetti Van Melle Bangladesh · 2019</dd><dd>Launched the first extruded jelly in Bangladesh (Chupa Chups).</dd></div>
+          <div><dt>Management Trainee; QA Intern</dt><dd>Perfetti Van Melle, 2018–2019 · Nestlé, 2017–2018</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaching -->
+<section class="tile tile--light" id="teaching" aria-labelledby="teach-title">
+  <div class="wrap">
+    <h2 id="teach-title" class="reveal">Teaching and mentoring</h2>
+    <p class="statement statement--ink reveal">7 university courses taught or assisted, and 8 student research projects supervised, from dryer design to fortified cheese.</p>
+
+    <div class="teach">
+      <div class="teach__courses reveal">
+        <h3>Courses</h3>
+        <div class="course course--feature">
+          <p class="course__name">GRSC 620 · Extrusion Processing in the Food and Feed Industries</p>
+          <p>Kansas State University, Fall 2026. I run the Wenger TX-52 twin-screw and X-20 single-screw extruders for trials on pet food, aquatic feed, breakfast cereals, pasta, 3G and expanded snacks and high-moisture meat analogues, and lead the problem-solving classes.</p>
+        </div>
+        <div class="course">
+          <p class="course__name">At HSTU, Bangladesh</p>
+          <p>Computer Application in Food Industries · Advanced Unit Operations in Food Engineering · Rheological Properties of Food · Food and Process Engineering · Food Process Plant Design and Management · Packaging Engineering</p>
+        </div>
+      </div>
+      <div class="teach__students reveal">
+        <h3>Students supervised</h3>
+        <ul class="students">
+          <li><span>2025</span>A lab-scale heat pump dryer, designed and validated with CFD simulation (M.S., co-supervised)</li>
+          <li><span>2025</span>Iron from spinach leaves, optimized with RSM and ANN, for fortified cheddar cheese</li>
+          <li><span>2025</span>RSM vs. ANN for extracting protein and pectin from pumpkin seed and peel</li>
+          <li><span>2024</span>Biodegradable films from banana pseudo-stem nanocrystalline cellulose (M.S., co-supervised)</li>
+          <li><span>2024</span>Nata de coco and polylactic acid composite packaging films (M.S., co-supervised)</li>
+          <li><span>2024</span>Vegetable flakes from the HSTU dryer for a mixed vegetable soup</li>
+          <li><span>2023</span>Heat treatment and the quality of aloe vera juice (M.S., co-supervised)</li>
+          <li><span>2023</span>Final moisture content and the quality of industrially dried milled rice</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards and beyond -->
+<section class="tile tile--dark2" id="beyond" aria-labelledby="beyond-title">
+  <div class="wrap">
+    <h2 id="beyond-title" class="reveal">Recognition, and life beyond the lab</h2>
+    <div class="cols3 cols3--dark">
+      <div class="col reveal">
+        <h3>Academic</h3>
+        <ul class="plain">
+          <li>Semi-finalist, Best Student Research Paper Competition, Cereals &amp; Grains Association <span class="yr">2026</span></li>
+          <li>Tri-Alpha First-Generation Honor Society, Kansas State University <span class="yr">2026</span></li>
+          <li>Graduate Excellence Fellowship, Kansas State University <span class="yr">2025–2029</span></li>
+          <li>Prime Minister Gold Medal, highest CGPA in the Engineering faculty <span class="yr">2018</span></li>
+          <li>University Grants Commission Merit Scholarship <span class="yr">2015</span></li>
+        </ul>
+      </div>
+      <div class="col reveal">
+        <h3>Industry</h3>
+        <ul class="plain">
+          <li>NESCHAMP Award, best employee of the year, Nestlé Bangladesh <span class="yr">2022</span></li>
+          <li>Second runner-up, DMAIC in the CLG category, Nestlé South Asia <span class="yr">2021</span></li>
+          <li>Star Performer of the Year, Perfetti Van Melle Bangladesh <span class="yr">2019</span></li>
+        </ul>
+        <h3 class="col__sub">Service</h3>
+        <ul class="plain">
+          <li>Student Representative, IFT Food Engineering Division <span class="yr">2026–2027</span></li>
+          <li>Event Chair, Grain and Food Graduate Student Organization <span class="yr">2026–now</span></li>
+        </ul>
+      </div>
+      <div class="col reveal">
+        <h3>Badminton</h3>
+        <ul class="plain">
+          <li>Gold, mixed doubles, Sunflower State Games, Topeka <span class="yr">2026</span></li>
+          <li>Gold, men’s singles, International Coordinating Council Championship, Kansas <span class="yr">2025, 2026</span></li>
+          <li>Bronze, Bangladesh University Games <span class="yr">2018</span></li>
+          <li>President, Badminton Club at Kansas State University <span class="yr">2026–now</span></li>
+          <li>Captain, HSTU university badminton team <span class="yr">2015–2018</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="tile tile--parchment contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 id="contact-title" class="reveal">Let’s talk extrusion, data and food</h2>
+    <p class="contact__mail reveal"><a href="mailto:mtbillah01@ksu.edu">mtbillah01@ksu.edu</a></p>
+    <div class="contact__grid reveal">
+      <div>
+        <h3>Office</h3>
+        <address>Western Star Global Grain and Food Center, Room 2004<br>1430 Claflin Road<br>Manhattan, Kansas 66506</address>
+      </div>
+      <div>
+        <h3>Direct</h3>
+        <p><a href="tel:+17853174448">785-317-4448</a><br><a href="mailto:mtbillah@gmail.com">mtbillah@gmail.com</a></p>
+      </div>
+      <div>
+        <h3>Profiles</h3>
+        <p><a href="https://scholar.google.com/citations?hl=en&amp;user=_oGqy9IAAAAJ" rel="noopener">Google Scholar</a><br><a href="https://orcid.org/0009-0003-9874-1420" rel="noopener">ORCID</a><br><a href="https://www.linkedin.com/in/mtbillah/" rel="noopener">LinkedIn</a><br><a href="https://hstu.ac.bd/teacher/mirtuhin" rel="noopener">HSTU profile</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p class="foot__name" translate="no">Mir Tuhin Billah</p>
+    <p class="foot__fine">© 2026 Mir Tuhin Billah · Manhattan, Kansas · Updated November 2026</p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
