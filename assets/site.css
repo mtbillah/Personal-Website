@@ -412,3 +412,35 @@ h3 { font: var(--t-body-strong); letter-spacing: var(--ls-body); }
 @media (min-width: 641px) and (max-width: 833px) {
   .hero__photo img { aspect-ratio: 16 / 9; object-position: 50% 22%; }
 }
+
+/* ---------- photographs ---------- */
+.photo { margin: 0; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo figcaption { margin-top: var(--s-xs); font: var(--t-caption); letter-spacing: var(--ls-caption); color: var(--ink-muted-80); }
+.tile--dark .photo figcaption, .tile--dark2 .photo figcaption { color: var(--body-muted); }
+.photo-pair { margin-top: var(--s-xxl); display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--s-lg); align-items: start; }
+.photo--wide img { aspect-ratio: 3 / 2; height: auto; }
+.photo--tall img { aspect-ratio: 3 / 4; }
+.photo-pair { align-items: stretch; }
+.photo-pair .photo--tall { display: flex; flex-direction: column; }
+.photo-pair .photo--tall picture { flex: 1 1 0; min-height: 0; display: block; }
+.photo-pair .photo--tall img { aspect-ratio: auto; height: 100%; }
+.photo-pair .photo--wide figcaption, .photo-pair .photo--tall figcaption { min-height: 2.9em; }
+.photo--lab { margin-bottom: var(--s-xl); }
+.photo--lab img { aspect-ratio: 1; }
+.sport { margin-top: var(--s-xxl); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-xl); align-items: end; }
+.sport .photo img { aspect-ratio: 4 / 5; }
+.sport__note { font: var(--t-lead); letter-spacing: 0.196px; color: var(--body-on-dark); font-size: 24px; line-height: 1.33; }
+.contact__layout { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--s-xxl); align-items: start; }
+.photo--contact img { aspect-ratio: 3 / 4; }
+@media (max-width: 1068px) {
+  .contact__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 833px) {
+  .photo-pair, .sport, .contact__layout { grid-template-columns: 1fr; gap: var(--s-lg); }
+  .photo-pair .photo--tall picture { flex: none; }
+  .photo-pair .photo--tall img { height: auto; aspect-ratio: 4 / 5; }
+  .photo-pair figcaption { min-height: 0 !important; }
+  .photo--contact { max-width: 360px; }
+  .sport__note { font-size: 22px; }
+}
