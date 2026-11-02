@@ -91,6 +91,7 @@
       if (topic === 'all') url.searchParams.delete('topic'); else url.searchParams.set('topic', topic);
       history.replaceState(null, '', url);
     }
+    document.dispatchEvent(new CustomEvent('pubs:topic', { detail: topic }));
   };
   chips.forEach((c) => c.addEventListener('click', () => applyTopic(c.dataset.topic, true)));
   document.querySelectorAll('.linkbtn[data-topic]').forEach((b) => b.addEventListener('click', () => applyTopic('all', true)));
@@ -116,4 +117,55 @@
     const h = document.getElementById('talks-upcoming-title');
     if (h) h.hidden = none;
   }
+  /* ---- "Show all": long lists open with their newest items, the rest one click away ---- */
+  const moreGroups = [
+    { sec: '#publications', lists: '.pubs', limits: [2, 3], noun: 'publications' },
+    { sec: '#talks', lists: '.talks--upcoming, .talks--past', limits: [3, 2], noun: 'talks' },
+    { sec: '#experience', lists: '.roles', limits: [2, 2, 2], label: 'Show full experience' },
+    { sec: '#teaching', lists: '.students', limits: [4], noun: 'projects' },
+    { sec: '#beyond', lists: '.plain', limits: [3, 3, 3, 3], label: 'Show all awards and activities' },
+  ];
+  const itemsOf = (list) => [...list.children].filter((el) => el.matches('li, div'));
+  moreGroups.forEach((g, gi) => {
+    const sec = document.querySelector(g.sec);
+    if (!sec) return;
+    const lists = [...sec.querySelectorAll(g.lists)];
+    const total = lists.reduce((n, l) => n + itemsOf(l).length, 0);
+    const clipped = () => lists.flatMap((l, i) => itemsOf(l).slice(g.limits[i] ?? g.limits[g.limits.length - 1]));
+    if (!clipped().length) return;
+    const wrap = sec.querySelector('.wrap');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'more';
+    btn.id = `more-${gi}`;
+    btn.setAttribute('aria-controls', sec.id);
+    const openLabel = g.label || `Show all ${total} ${g.noun}`;
+    let open = false;
+    let suspended = false;
+    const render = () => {
+      lists.flatMap(itemsOf).forEach((el) => el.classList.remove('is-clipped'));
+      if (!open && !suspended) clipped().forEach((el) => el.classList.add('is-clipped'));
+      btn.hidden = suspended;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.innerHTML = `<span>${open ? 'Show fewer' : openLabel}</span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+      if (g.sec === '#publications' && count && !suspended) {
+        const visible = [...pubs].filter((p) => !p.classList.contains('is-clipped')).length;
+        count.textContent = open ? `Showing all ${pubs.length}` : `Showing ${visible} of ${pubs.length}`;
+      }
+    };
+    btn.addEventListener('click', () => {
+      open = !open;
+      render();
+      if (!open) btn.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    });
+    if (g.sec === '#publications') {
+      const current = document.querySelector('.chip[aria-pressed="true"]');
+      suspended = !!current && current.dataset.topic !== 'all';
+      document.addEventListener('pubs:topic', (e) => { suspended = e.detail !== 'all'; render(); });
+      (sec.querySelector('.pubs__body') || wrap).appendChild(btn);
+    } else {
+      wrap.appendChild(btn);
+    }
+    render();
+  });
 })();
