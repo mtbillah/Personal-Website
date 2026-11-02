@@ -99,21 +99,21 @@
     if (initial) applyTopic(initial, false);
   } catch (e) { /* keep default */ }
 
-  /* ---- talks: anything already past moves to "Earlier" by itself ---- */
+  /* ---- talks: split into "Coming up" and "Earlier" by today's date ---- */
   const upcoming = document.querySelector('.talks--upcoming');
   const past = document.querySelector('.talks--past');
   if (upcoming && past) {
     const today = new Date(); today.setHours(0, 0, 0, 0);
-    [...upcoming.children].forEach((li) => {
+    const all = [...upcoming.children, ...past.children];
+    const isPast = (li) => {
       const d = new Date(`${li.dataset.date}T23:59:59`);
-      if (!Number.isNaN(d.getTime()) && d < today) past.prepend(li);
-    });
-    const items = [...past.children].sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
-    items.forEach((li) => past.appendChild(li));
-    if (!upcoming.children.length) {
-      upcoming.hidden = true;
-      const h = document.getElementById('talks-upcoming-title');
-      if (h) h.hidden = true;
-    }
+      return !Number.isNaN(d.getTime()) && d < today;
+    };
+    all.filter((li) => !isPast(li)).sort((a, b) => a.dataset.date.localeCompare(b.dataset.date)).forEach((li) => upcoming.appendChild(li));
+    all.filter(isPast).sort((a, b) => b.dataset.date.localeCompare(a.dataset.date)).forEach((li) => past.appendChild(li));
+    const none = !upcoming.children.length;
+    upcoming.hidden = none;
+    const h = document.getElementById('talks-upcoming-title');
+    if (h) h.hidden = none;
   }
 })();

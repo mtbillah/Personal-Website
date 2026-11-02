@@ -24,3 +24,15 @@ Edit the text in `index.html` (each section is labelled with a comment) and re-u
 
 ## Adding photos later
 Put photos in `assets/img/` and ask Claude to place them. The design is built to carry 4 or more real photos (lab, extruder, posters, badminton).
+
+## Automatic updates from the CV (Overleaf)
+The private repository `mtbillah/cv` is linked to the Overleaf CV project. When you click
+**Integrations → GitHub → Push Overleaf changes to GitHub** in Overleaf, a GitHub Action there runs
+`tools/cv_to_site.py`, which rewrites the regions of `index.html` between `<!-- AUTO:... -->` markers:
+publications, talks, awards, service and badminton, and students supervised. The live site updates about 1–2 minutes later.
+
+Everything outside those markers (hero, research, experience, courses, contact) is hand-written; ask Claude to change it.
+
+Safety: if the CV can't be read, or the number of publications or talks goes down, the action stops without
+publishing and GitHub emails you. To delete an item on purpose, run the action from the cv repository's
+Actions tab, or ask Claude.
