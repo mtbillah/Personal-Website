@@ -428,7 +428,7 @@ h3 { font: var(--t-body-strong); letter-spacing: var(--ls-body); }
 .photo-pair .photo--wide figcaption, .photo-pair .photo--tall figcaption { min-height: 2.9em; }
 .photo--lab { margin-bottom: var(--s-xl); }
 .photo--lab img { aspect-ratio: 1; }
-.sport { margin-top: var(--s-xxl); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-xl); align-items: end; }
+.sport { margin-top: var(--s-xxl); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-xl); align-items: start; }
 .sport .photo img { aspect-ratio: 4 / 5; }
 .sport__note { font: var(--t-lead); letter-spacing: 0.196px; color: var(--body-on-dark); font-size: 24px; line-height: 1.33; }
 .contact__layout { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--s-xxl); align-items: start; }
@@ -478,3 +478,4 @@ h3 { font: var(--t-body-strong); letter-spacing: var(--ls-body); }
   .study__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-lg) var(--s-md); }
   .study__text h3 { font-size: 22px; line-height: 1.25; }
 }
+.talk__award { color: var(--body-on-dark); font-weight: 600; }
