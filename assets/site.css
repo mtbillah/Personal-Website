@@ -479,3 +479,19 @@ h3 { font: var(--t-body-strong); letter-spacing: var(--ls-body); }
   .study__text h3 { font-size: 22px; line-height: 1.25; }
 }
 .talk__award { color: var(--body-on-dark); font-weight: 600; }
+
+/* ---------- advisor photo (Experience) and social photo (Recognition) ---------- */
+.exp__side .photo--advisor { margin-top: var(--s-lg); max-width: 440px; }
+.photo--advisor img { aspect-ratio: 3 / 2; height: auto; }
+.sport .photo--span2 { grid-column: span 2; align-self: stretch; display: flex; flex-direction: column; }
+.sport .photo--span2 picture { flex: 1 1 0; min-height: 0; display: block; }
+.sport .photo--span2 img { aspect-ratio: auto; height: 100%; object-position: 50% 60%; }
+.sport figcaption { min-height: 2.9em; }
+.sport .sport__note { align-self: center; }
+@media (max-width: 833px) {
+  .sport .photo--span2 { grid-column: auto; }
+  .sport .photo--span2 picture { flex: none; }
+  .sport .photo--span2 img { height: auto; aspect-ratio: 4 / 3; }
+  .sport figcaption { min-height: 0; }
+  .exp__side .photo--advisor { max-width: none; margin-top: var(--s-md); }
+}
