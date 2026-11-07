@@ -121,7 +121,7 @@
   const moreGroups = [
     { sec: '#publications', lists: '.pubs', limits: [2, 3], noun: 'publications' },
     { sec: '#talks', lists: '.talks--upcoming, .talks--past', limits: [3, 2], noun: 'talks' },
-    { sec: '#experience', lists: '.roles', limits: [2, 2, 2], label: 'Show full experience' },
+    { sec: '#experience', lists: '.roles', limits: [3, 2, 2], label: 'Show full experience' },
     { sec: '#teaching', lists: '.students', limits: [4], noun: 'projects' },
     { sec: '#beyond', lists: '.plain', limits: [3, 3, 3, 3], label: 'Show all awards and activities' },
   ];
