@@ -495,3 +495,21 @@ h3 { font: var(--t-body-strong); letter-spacing: var(--ls-body); }
   .sport figcaption { min-height: 0; }
   .exp__side .photo--advisor { max-width: none; margin-top: var(--s-md); }
 }
+
+/* ---------- Wenger machines (Research) ---------- */
+.machines { margin-top: var(--s-section); }
+.machines__text { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-xxl); align-items: baseline; }
+.machines__text h3 { font: var(--t-lead); letter-spacing: 0.196px; }
+.machines__text p { color: var(--body-muted); max-width: 52ch; }
+.machines__row { margin-top: var(--s-xl); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-lg); }
+.machines__row picture { display: block; }
+.machines__row .photo img { aspect-ratio: 4 / 5; height: auto; }
+@media (max-width: 1068px) {
+  .machines__text { grid-template-columns: 1fr; gap: var(--s-md); }
+}
+@media (max-width: 640px) {
+  .machines__row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-lg) var(--s-md); }
+  .machines__row .photo:last-child { grid-column: 1 / -1; }
+  .machines__row .photo:last-child img { aspect-ratio: 4 / 3; object-position: 50% 60%; }
+  .machines__text h3 { font-size: 22px; line-height: 1.25; }
+}
