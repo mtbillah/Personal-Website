@@ -462,3 +462,19 @@ h3 { font: var(--t-body-strong); letter-spacing: var(--ls-body); }
 .tile--dark .more, .tile--dark2 .more { color: var(--primary-on-dark); box-shadow: inset 0 0 0 1px var(--primary-on-dark); }
 .tile--dark .more:hover, .tile--dark2 .more:hover { background: var(--primary-on-dark); color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .more svg { transition: none; } }
+
+/* ---------- one study in pictures (HMMA imaging) ---------- */
+.study { margin-top: var(--s-section); }
+.study__text { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-xxl); align-items: baseline; }
+.study__text h3 { font: var(--t-lead); letter-spacing: 0.196px; }
+.study__text p { color: var(--ink-muted-80); max-width: 52ch; }
+.study__steps { margin-top: var(--s-xl); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-md); }
+.study__steps picture { display: block; }
+.study__steps .photo img { aspect-ratio: 4 / 5; height: auto; }
+@media (max-width: 1068px) {
+  .study__text { grid-template-columns: 1fr; gap: var(--s-md); }
+}
+@media (max-width: 640px) {
+  .study__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-lg) var(--s-md); }
+  .study__text h3 { font-size: 22px; line-height: 1.25; }
+}
